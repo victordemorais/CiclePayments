@@ -1,9 +1,11 @@
 const debitoDefs = `
 type Debito {
     id: ID
-    mes: String!
+    mes: Int!
+    ano: Int!
     nome: String!
     valor: Float!
+    status: String!
     createdAt: DateTime! # will be generated
     updatedAt: DateTime! # will be generated
 }
@@ -15,15 +17,19 @@ const debitoQueries = `
 `;
 const debitoMutations = `
     criarDebito (
-        mes:String!
-        nome:String!
-        valor:Float!
+        mes: Int!
+        ano: Int!
+        nome: String!
+        valor: Float!
+        status: String!
     ): Debito
     atualizaDebito(
-        id: Int!
-        mes:String!
-        nome:String!
-        valor:Float!
+        id: ID!
+        mes: Int!
+        ano: Int!
+        nome: String!
+        valor: Float!
+        status: String!
     ): Debito
 `;
 module.exports = {

@@ -8,13 +8,17 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      mes:{
-        allowNull:false,
-        type:Sequelize.STRING
+      nome_mes: {
+        allowNull: false,
+        type: Sequelize.STRING
       },
-      ano:{
-        allowNull:false,
-        type:Sequelize.STRING
+      mes: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
+      ano: {
+        allowNull: false,
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

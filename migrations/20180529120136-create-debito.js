@@ -10,15 +10,24 @@ module.exports = {
       },
       mes: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       ano: {
         allowNull: false,
         type: Sequelize.STRING
       },
-      valor:{
-        allowNull:false,
-        type:Sequelize.FLOAT
+      nome: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      valor: {
+        allowNull: false,
+        type: Sequelize.FLOAT
+      },
+      status: {
+        type: Sequelize.ENUM('PAGO', 'PENDENTE', 'AGENDADO'),
+        allowNull: false,
+        defaultValue: "AGENDADO"
       },
       createdAt: {
         allowNull: false,

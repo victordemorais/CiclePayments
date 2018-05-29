@@ -8,11 +8,11 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     mes: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     ano: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     nome: {
@@ -25,7 +25,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Credito.associate = function (models) {
-    Credito.belongsTo(models.Mes);
+    Credito.belongsTo(models.Mes, {
+      foreignKey: {
+        allowNull: false,
+        field: "mes",
+        name: "mes"
+      }
+    });
   };
   return Credito;
 };

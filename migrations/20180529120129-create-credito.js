@@ -10,7 +10,7 @@ module.exports = {
       },
       mes: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       ano: {
         allowNull: false,

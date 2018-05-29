@@ -1,8 +1,9 @@
 const mesDefs = `
 type Mes {
     id: ID
-    mes: String!
-    ano: String!
+    nome_mes:String!
+    mes: Int!
+    ano: Int!
     debito: [Debito!]
     credito: [Credito!]
     createdAt: DateTime! # will be generated
@@ -15,8 +16,9 @@ const mesQueries = `
 `;
 const mesMutations = `
     criarMes(
-        mes:String!
-        ano:String!
+        nome_mes:String!
+        mes:Int!
+        ano:Int!
     ):Mes
 `;
 

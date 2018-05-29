@@ -1,7 +1,12 @@
 const {
     makeExecutableSchema
 } = require('graphql-tools');
+const {
+    merge
+} = require('lodash');
+
 const resolvers = require('./resolvers');
+const mesResolvers = require('./mes/mes.resolver');
 
 const {
     creditoDefs,
@@ -36,5 +41,5 @@ const typeDefs = `
 `;
 module.exports = makeExecutableSchema({
     typeDefs,
-    resolvers
+    resolvers: merge(mesResolvers, resolvers)
 });

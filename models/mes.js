@@ -7,8 +7,12 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       allowNull: false
     },
-    mes: {
+    nome_mes: {
       type: DataTypes.STRING,
+      allowNull: false
+    },
+    mes: {
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     ano: {
@@ -17,8 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   Mes.associate = function (models) {
-    Mes.hasMany(models.Credito);
-    Mes.hasMany(models.Debito);
+
   };
   return Mes;
 };
