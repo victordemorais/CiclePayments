@@ -6,7 +6,9 @@ const {
 } = require('lodash');
 
 const resolvers = require('./resolvers');
-const mesResolvers = require('./mes/mes.resolver');
+const MesResolvers = require('./mes/mes.resolver');
+const CreditoResolvers = require('./credito/credito.resolver');
+const DebitoResolvers = require('./debito/debito.resolver');
 
 const {
     creditoDefs,
@@ -41,5 +43,9 @@ const typeDefs = `
 `;
 module.exports = makeExecutableSchema({
     typeDefs,
-    resolvers: merge(mesResolvers, resolvers)
+    resolvers: merge(
+        MesResolvers,
+        CreditoResolvers,
+        DebitoResolvers
+    )
 });

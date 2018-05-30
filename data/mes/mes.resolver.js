@@ -7,13 +7,11 @@ require('dotenv').config();
 
 const MesResolver = {
     Mes: {
-        async credito({
-            id
-        }) {
-
+        async credito(req) {
+            console.log(req.mes)
             return await Credito.findAll({
                 where: {
-                    mes_id: id
+                    mes: req.mes
                 }
             });
         },
